@@ -5,7 +5,7 @@ permalink: /
 subtitle: PhD ETH Zürich | MEng Oxford
 
 profile:
-  align: right
+  align: left
   image: TotallyNotMyBestPic.jpg
   image_circular: false # crops the image to make it circular
   more_info: > 

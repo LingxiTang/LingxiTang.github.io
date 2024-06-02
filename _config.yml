@@ -8,10 +8,10 @@ middle_name:
 last_name: Tang
 email: tanglingxi97@outlook.sg
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Lingxi Tang. PhD ETH Zurich. Technology Policy. Sustainability.
+  Lingxi Tang. PhD ETH Zürich. Technology-centric Climate Policy. Sustainability.
 footer_text:
 
-keywords: lingxi, tang, sustainability, phd, ethz, eth, energy policy, energy, technology, technology policy, oxford # add your own keywords or leave empty
+keywords: lingxi, tang, sustainability, phd, ethz, eth, energy policy, energy, technology, technology policy, oxford, climate policy # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: WebsiteIcon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -25,10 +25,10 @@ impressum_path: # set to path to include impressum link in the footer, use the s
 # -----------------------------------------------------------------------------
 
 # repo color theme
-repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
-repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_theme_light: gruvbox_light # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_theme_dark: gruvbox # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_trophies:
-  enabled: true
+  enabled: false
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
   theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
 
@@ -45,7 +45,7 @@ rss_icon: false
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 
 # Dimensions
 max_width: 800px
@@ -130,10 +130,10 @@ permalink:
 
 # Pagination
 pagination:
-  enabled: true
+  enabled: false
 
 related_blog_posts:
-  enabled: true
+  enabled: false
   max_related: 5
 
 # Giscus comments (RECOMMENDED)

@@ -2,9 +2,9 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: A collection of personal projects.
 nav: false
-display_categories: [code, fun]
+display_categories: [politics, travel]                 # Put different categories here
 horizontal: false
 ---
 

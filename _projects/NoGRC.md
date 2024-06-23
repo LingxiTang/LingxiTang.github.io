@@ -96,7 +96,7 @@ Under my scenario assumptions, these seats would not change since there were no 
 <div class="caption">
     Fig 2:<br> 
     Left: Parliament seats from GRCs rose quite quickly up till 1997.<br>
-    Right: PAP grabbing ez seats, with no contests. This explains the results in Fig 1.
+    Right: PAP grabbing ez seats until 2011. This explains the results in Fig 1.
 </div>
 
 ____________________________________________________________________________________________________________________________________________________________________________________

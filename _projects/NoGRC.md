@@ -62,7 +62,7 @@ Alright, let's look at how many seats each party would have gained/lost in this 
 </div>
 <div class="caption">
     Fig 1: Seat changes for parties if GRCs were not implemented.<br>
-    Oof. Big losses for PAP. Luckily, we've got GRCs! Whew.
+    Oof. Big losses for PAP.
 </div>
 
 As expected, if GRCs had been proportionally represented, we see the winning party (historically PAP) losing their seats. Because the votes that had gone unrepresented are now actually translating to seats won.
@@ -155,8 +155,19 @@ the [2016 minority president amendment](https://web.archive.org/web/201906061650
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 
-At this stage, I invite you to check out an [interactive dashboard](https://mybinder.org/v2/gh/LingxiTang/NoGRCExperiment/HEAD?labpath=Results_Visualisation_interactive.ipynb), where you can compare actual and hypothetical
-GE results. Using this dashboard, I compiled the following results regarding PAP's supermajority.
+At this stage, I invite you to check out an [interactive dashboard](https://mybinder.org/v2/gh/LingxiTang/NoGRCExperiment/HEAD?labpath=Results_Visualisation_interactive.ipynb), where you can compare actual and hypothetical GE results. 
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/2011_AntiPAP.png" title="Seat Changes (Anti PAP)" class="img-fluid rounded z-depth-1"%}
+    </div>
+</div>
+<div class="caption">
+    Example result from the dashboard. This is the absolute worst result for the PAP across all years and scenarios.
+</div>
+
+
+Using this dashboard, I compiled the following results regarding PAP's supermajority.
 
 Pro-PAP: 
 
@@ -181,7 +192,6 @@ __DISCUSSION__
 *But an efficient one-party system is good for Singapore! If it means a stable government, gerrymandering can stay.*
   - Well, as we saw in the 'Pro-PAP' and 'Pro-Winner' scenarios, PAP would have been the ruling party with a supermajority.
   - So, yes, the PAP might have won extra seats due to the GRC system but they're kinda unnecessary.
-  
   - Worst case ('Anti-PAP'), PAP might have lost their supermajority since 2011, but they would still have a majority and be able to pass laws easily. 
   - Sure, PAP wouldn't have been able to amend the constitution so easily. To that, I ask, should our Constitution be amended so easily? But that's for another time.
 
@@ -197,7 +207,7 @@ ________________________________________________________________________________
 
 __FURTHER RANTS ABOUT GRC__
   
-Not only that, I've got a few more issues with the GRC system, which I'll touch on briefly.
+While writing this, I've thought of a few more issues with the GRC system.
 
 *Complacent politicians*
 - In GRCs, MPs can piggyback off political powerhouses. Going back to SMCs ensures competition for each and every seat, leading to more engaged and competent MPs.

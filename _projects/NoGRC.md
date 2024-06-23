@@ -25,7 +25,7 @@ In the 1988 Singaporean General Election (GE), the GRC system was introduced. Gr
 
 Why introduce GRCs? Officially, it was to guarantee a multiracial parliament. After all, SMCs do run the risk of having a Parliament full of Chinese MPs.
 
-Unofficially, many accuse the GRC system of a being a gerrymandering system. 
+Unofficially, many accuse the GRC system of a being a gerrymandering system (See graphic below). 
 
 That led me to the question: *How well did the GRC system gerrymander? How different would the Singapore Parliament have been if GRCs were never implemented?*
 
@@ -41,13 +41,13 @@ ________________________________________________________________________________
 
 __RESEARCH DESIGN__
 
-To answer this question, I looked at the GE results from 1988 to 2010, and made changes based on the following assumptions:
+To answer this question, I looked at the GE results from 1988 to 2010, and applied hypothetical changes based on the following assumptions:
 
 - Seats in GRCs split proportionally based on votes. E.g. If a 4-member GRC had a vote split of 75:25, the seats would be split 3:1.
 
 - Results of SMCs remain the same.
 
-- PAP gets the rounded up seat split. e.g. PAP wins 100% of seats in a GRC as long as they win >= 75% of votes. (This is the Pro-PAP scenario. More scenarios later.)
+- PAP gets the rounded up number of seats based on the vote proportion. e.g. If PAP wins 51-75% of votes in a 4-member GRC, they win 3 seats. (This is the Pro-PAP scenario. More scenarios later.)
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 
@@ -61,7 +61,8 @@ Alright, let's look at how many seats each party would have gained/lost in this 
     </div>
 </div>
 <div class="caption">
-    Fig 1: Oof. Big losses for PAP. Luckily, we've got GRCs! Whew.
+    Fig 1: Seat changes for parties if GRCs were not implemented.<br>
+    Oof. Big losses for PAP. Luckily, we've got GRCs! Whew.
 </div>
 
 As expected, if GRCs had been proportionally represented, we see the winning party (historically PAP) losing their seats. Because the votes that had gone unrepresented are now actually translating to seats won.
@@ -106,11 +107,11 @@ Going back to __RESEARCH DESIGN__, I made the generous assumption that the PAP g
 
 But WHAT IF the assumption didn't skew towards PAP? To answer this, I tested 2 more scenarios, for a total of 3 scenarios:
 
-1. <u>Pro PAP</u> (what we’ve seen so far): PAP gets the rounded up seat split. e.g. In a 4-seat GRC, PAP gets 4 seats in an 80:20 vote split.
+1. <u>Pro PAP</u> (what we’ve seen so far): PAP gets the rounded up seat number. e.g. In a 4-seat GRC, PAP gets 3 seats if they win 51-75% of votes.
+
+2. <u>Anti PAP</u>: PAP gets the rounded down seat number. e.g. In a 4-seat GRC, PAP gets 2 seats if they win 50-74% of votes.
    
-2. <u>Anti PAP</u>: PAP gets the rounded down seat split. e.g. PAP gets 3 seats in an 80:20 vote split.
-   
-3. <u>Pro Winner</u>: The actual winner gets the rounded up seat split. e.g. If opposition actually won the GRC, opposition gets the 4 seats in this scenario, else if PAP won it, PAP gets them.
+3. <u>Pro Winner</u>: The actual winner gets the rounded up seat number. e.g. In a 4-seat GRC, the actual winner gets 3 seats if they win 51-75% of votes.
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 

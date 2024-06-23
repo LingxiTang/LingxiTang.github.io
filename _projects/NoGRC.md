@@ -190,14 +190,14 @@ __DISCUSSION__
   - First set of results kinda showed that the GRC system tend to favour the winning party which, historically, has mostly been the PAP. So yes, the GRC system has been a good gerrymandering tool, which is inherently unfair.
 
 *But an efficient one-party system is good for Singapore! If it means a stable government, gerrymandering can stay.*
-  - Well, as we saw in the 'Pro-PAP' and 'Pro-Winner' scenarios, PAP would have been the ruling party with a supermajority.
-  - So, yes, the PAP might have won extra seats due to the GRC system but they're kinda unnecessary.
+  - Well, as we saw in the 'Pro-PAP' and 'Pro-Winner' scenarios, PAP would have been the ruling party with a supermajority anyway, even without GRCs.
+  - So, yes, the PAP might have won extra seats due to the GRC system but they're kinda unnecessary, in terms of helping PAP maintain power.
   - Worst case ('Anti-PAP'), PAP might have lost their supermajority since 2011, but they would still have a majority and be able to pass laws easily. 
   - Sure, PAP wouldn't have been able to amend the constitution so easily. To that, I ask, should our Constitution be amended so easily? But that's for another time.
 
 *Ok, what about the intended purpose of the GRC system? Has it ensured minority representation in parliament?*
   - Yes indeed, accusing the GRC system to only be a gerrymandering tactic isn't fair. We need to see if it did what it was designed to do. But how might we assess that? A good start would be to look at minority MPs before and after 1988 and see how that changed.
-  - Looking at the 1984 GE results (right before GRCs were implemented), I count about 14 minority MPS out of 79 elected seats (17.72%), including ex-WP leader JB Jeyeratnam. 
+  - Looking at the 1984 GE results (right before GRCs were implemented), I count about 14 minority MPS out of 79 elected seats (17.72%), including ex-WP leader JB Jeyeratnam (more on this later...)
   - For comparison, there were 17 GRCs in 2020. So, effectively, GRCs guaranteed 17 minority MPs out of 93 elected seats (18.28%) in 2020, that’s barely an improvement from 1984 with no GRCs. To be fair, the 2020 GE saw 25 minority MPs out of 93. But still, the necessity of GRCs to ensure minority representation is questionable.
   - So… it didn’t seem like minorities had a problem of a lack of representation in parliament?
 
@@ -216,16 +216,16 @@ While writing this, I've thought of a few more issues with the GRC system.
 - Number of seats in GRC is completely random and arbitrary. Like, if you're gerrymandering, at least make it less obvious; make the number of seats in each GRC the same.
 
 *On minority quotas*
-  - Also, do we really still need a quota to ensure minority representation in parliament? Some of our best politicians today are from the minority communities. Most notably, Tharman, Shanmugan, Pritam Singh. It’s almost abit insulting to the minority community to say that affirmative action are needed to guarantee minority MPs. If anything, i think we can agree that these powerhouse ‘minority’ politicians had been hard-carrying their fellow Chinese GRC mates.
+  - Also, do we really still need a quota to ensure minority representation in parliament? Some of our best politicians today are from the minority communities. Most notably, Tharman, Shanmugan, Pritam Singh and even historically, JB Jeyeratnam. It’s almost abit insulting to the minority community to say that affirmative action are needed to guarantee minority MPs. If anything, i think we can agree that these powerhouse ‘minority’ politicians had been hard-carrying their fellow Chinese GRC mates.
   - I think Singapore has moved past voting on racial grounds. Singaporeans can be trusted to look past race and vote based on merit.
-  - The existence of a minority quota requirement in parliament is admitting that power in government is still unfairly concentrated in the Chinese community, and I think that is not true.
+  - The existence of a minority quota in parliament is admitting that power in government is still unfairly concentrated in the Chinese community, and I think that is not true.
 
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 
 __CONCLUSION__
 
-For the record, I am not even Pro-opposition. Personally, I highly value our unique “democratic one-party system”. Singapore is super lucky to have proper unrigged elections, while enjoying the efficiency of a one-party state.
+For the record, I am not even anti-PAP. Personally, I highly value our unique “democratic one-party system”. Singapore is super lucky to have proper unrigged elections, while enjoying the efficiency of a one-party state.
 
 Even so, I still think that the GRC system needs to go. It's unnecessarily unfair, and it's not even helping in promoting minority representation in parliament. 
 
@@ -235,5 +235,7 @@ Removing or reforming the GRC system is a step Singapore can take towards a fair
 
 And finally,
 
-This is really not priority. Climate change is. My vote to the party with the better Net Zero Strategy for Singapore. 
+This is really not priority. I wrote this because I was bored and one thing led to another.
+
+Climate change is the priority. My vote will go to the party with the better Net Zero Strategy for Singapore. 
 

@@ -2,9 +2,9 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Things I worked on during free time
+description: A collection of personal projects.
 nav: false
-display_categories: [politics]                 # Put different categories here
+display_categories: [politics, travel]                 # Put different categories here
 horizontal: false
 ---
 

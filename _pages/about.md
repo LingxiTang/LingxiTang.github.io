@@ -22,10 +22,6 @@ I was born and raised in Singapore, before moving to Oxford, UK for my undergrad
 
 My current research focuses on __understanding technology__, specifically the phenomenon of [learning-by-doing](https://ourworldindata.org/learning-curve), so that we can make more __effective climate policies__. 
 
-Currently planning to have additional focuses on __advanced nuclear energy__ & __aviation decarbonisation__.
-
-Climate aside, I'm also concerned about AI misalignment, interested in politics and fascinated by how little we know about our brain.
-
 Reach out to me for collab or discussions! I don't respond to Nigerian princes or crypto investment opportunities.
 
 

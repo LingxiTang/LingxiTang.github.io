@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Takeaways from the ETH Energy Summer School 2025
-description: Navigating the energy transition in an insecure world — notes from the ETH Energy Science Center summer school.
+title: ETH Energy Summer School 2025
+description: Takeaways and learnings
 importance: 3
 category: EnergyBlog
 img: assets/img/energyblog_summer_school_2025.jpg

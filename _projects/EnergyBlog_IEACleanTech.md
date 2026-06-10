@@ -1,7 +1,7 @@
 ---
 layout: page
-title: IEA's Perspective on the Clean Tech Market
-description: Growing demand, concentrated supply — the IEA's view of the global clean energy market. (with Alyssa Kozian)
+title: IEA's Perspective
+description: on the Cleantech market
 importance: 2
 category: EnergyBlog
 img: assets/img/energyblog_iea_cleantech.jpg

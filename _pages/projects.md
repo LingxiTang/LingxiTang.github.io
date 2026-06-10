@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Things I worked on during free time
+description: 
 nav: true
 nav_order: 3
-display_categories: [politics]                 # Put different categories here
+display_categories: [EnergyBlog, politics]                 # Put different categories here
 horizontal: false
 ---
 

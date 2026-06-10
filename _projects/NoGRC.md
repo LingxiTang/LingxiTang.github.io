@@ -155,16 +155,207 @@ the [2016 minority president amendment](https://web.archive.org/web/201906061650
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 
-At this stage, I invite you to check out an [interactive dashboard](https://mybinder.org/v2/gh/LingxiTang/NoGRCExperiment/HEAD?labpath=Results_Visualisation_interactive.ipynb), where you can compare actual and hypothetical GE results. 
+At this stage, I invite you to play with the interactive dashboard below, where you can compare actual and hypothetical GE results. Pick a year and a scenario; hover (or tap) a segment for details. The dashed lines mark the &frac12; majority and &frac23; supermajority thresholds. (Prefer the notebook version? It's still on [Binder](https://mybinder.org/v2/gh/LingxiTang/NoGRCExperiment/HEAD?labpath=Results_Visualisation_interactive.ipynb).)
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/2011_AntiPAP.png" title="Seat Changes (Anti PAP)" class="img-fluid rounded z-depth-1"%}
+{% raw %}
+<style>
+  .nogrc-dash { border: 1px solid var(--global-divider-color); border-radius: 12px; padding: 1rem 1rem 0.5rem; margin: 1.5rem 0; background: var(--global-card-bg-color, var(--global-bg-color)); position: relative; }
+  .nogrc-controls { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem; }
+  .nogrc-group { display: flex; flex-wrap: wrap; gap: 0.25rem; align-items: center; }
+  .nogrc-group-label { font-size: 0.8rem; font-weight: 600; opacity: 0.7; margin-right: 0.25rem; }
+  .nogrc-btn { border: 1px solid var(--global-divider-color); background: transparent; color: var(--global-text-color); border-radius: 999px; padding: 0.15rem 0.6rem; font-size: 0.8rem; cursor: pointer; line-height: 1.4; }
+  .nogrc-btn:hover { border-color: var(--global-theme-color); }
+  .nogrc-btn.active { background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff; }
+  .nogrc-charts { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+  .nogrc-chart { flex: 1 1 320px; max-width: 420px; min-width: 280px; }
+  .nogrc-chart h4 { text-align: center; font-size: 0.95rem; margin: 0.25rem 0 0; }
+  .nogrc-legend { display: flex; flex-wrap: wrap; gap: 0.2rem 0.7rem; justify-content: center; font-size: 0.75rem; margin: 0.25rem 0 0.75rem; }
+  .nogrc-legend span { white-space: nowrap; }
+  .nogrc-dot { display: inline-block; width: 0.6em; height: 0.6em; border-radius: 50%; margin-right: 0.25em; }
+  .nogrc-tip { position: absolute; pointer-events: none; background: var(--global-text-color); color: var(--global-bg-color); font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 6px; opacity: 0; transition: opacity 0.1s; z-index: 10; white-space: nowrap; }
+  .nogrc-note { font-size: 0.7rem; opacity: 0.6; text-align: center; margin: 0 0 0.5rem; }
+  .nogrc-seg { stroke: var(--global-bg-color); stroke-width: 1; cursor: pointer; }
+  .nogrc-seg:hover { opacity: 0.8; }
+  .nogrc-thresh { stroke: var(--global-text-color); stroke-dasharray: 4 4; stroke-width: 1; opacity: 0.5; }
+  .nogrc-threshlabel { fill: var(--global-text-color); font-size: 11px; opacity: 0.6; }
+  .nogrc-total { fill: var(--global-text-color); font-weight: 700; font-size: 22px; }
+  .nogrc-totalsub { fill: var(--global-text-color); font-size: 11px; opacity: 0.6; }
+</style>
+
+<div class="nogrc-dash" id="nogrc-dash">
+  <div class="nogrc-controls">
+    <div class="nogrc-group" id="nogrc-years"><span class="nogrc-group-label">Year</span></div>
+  </div>
+  <div class="nogrc-controls">
+    <div class="nogrc-group" id="nogrc-scens"><span class="nogrc-group-label">Scenario</span></div>
+  </div>
+  <div class="nogrc-charts">
+    <div class="nogrc-chart">
+      <h4 id="nogrc-title-l"></h4>
+      <svg id="nogrc-svg-l" viewBox="0 0 400 215" width="100%" role="img" aria-label="Actual parliament seat distribution"></svg>
+      <div class="nogrc-legend" id="nogrc-leg-l"></div>
     </div>
+    <div class="nogrc-chart">
+      <h4 id="nogrc-title-r"></h4>
+      <svg id="nogrc-svg-r" viewBox="0 0 400 215" width="100%" role="img" aria-label="Hypothetical parliament seat distribution"></svg>
+      <div class="nogrc-legend" id="nogrc-leg-r"></div>
+    </div>
+  </div>
+  <p class="nogrc-note">Elected seats only (no NCMPs). Hypothetical totals can differ from the real parliament size because seats are rounded per GRC.</p>
+  <div class="nogrc-tip" id="nogrc-tip"></div>
 </div>
-<div class="caption">
-    Example result from the dashboard. This is the absolute worst result for the PAP across all years and scenarios.
-</div>
+
+<script>
+(function () {
+  var DATA = {"1988": {"Actual": {"People's Action Party": 80, "Singapore Democratic Party": 1}, "AntiPAP": {"National Solidarity Party": 2, "People's Action Party": 63, "Singapore Democratic Party": 3, "Singapore Justice Party": 1, "United People's Front": 1, "Workers' Party": 11}, "ProPAP": {"National Solidarity Party": 1, "People's Action Party": 73, "Singapore Democratic Party": 2, "Workers' Party": 5}, "ProWinner": {"National Solidarity Party": 1, "People's Action Party": 73, "Singapore Democratic Party": 2, "Workers' Party": 5}}, "1991": {"Actual": {"People's Action Party": 77, "Singapore Democratic Party": 3, "Workers' Party": 1}, "AntiPAP": {"National Solidarity Party": 4, "People's Action Party": 68, "Singapore Democratic Party": 3, "Singapore Justice Party": 1, "Workers' Party": 5}, "ProPAP": {"National Solidarity Party": 1, "People's Action Party": 73, "Singapore Democratic Party": 3, "Workers' Party": 3}, "ProWinner": {"National Solidarity Party": 2, "People's Action Party": 73, "Singapore Democratic Party": 3, "Workers' Party": 3}}, "1997": {"Actual": {"People's Action Party": 81, "Singapore People's Party": 1, "Workers' Party": 1}, "AntiPAP": {"National Solidarity Party": 2, "People's Action Party": 68, "Singapore Democratic Party": 4, "Singapore People's Party": 1, "Workers' Party": 8}, "ProPAP": {"National Solidarity Party": 1, "People's Action Party": 74, "Singapore Democratic Party": 2, "Singapore People's Party": 1, "Workers' Party": 4}, "ProWinner": {"National Solidarity Party": 1, "People's Action Party": 74, "Singapore Democratic Party": 2, "Singapore People's Party": 1, "Workers' Party": 5}}, "2001": {"Actual": {"People's Action Party": 82, "Singapore Democratic Alliance": 1, "Workers' Party": 1}, "AntiPAP": {"People's Action Party": 74, "Singapore Democratic Alliance": 5, "Singapore Democratic Party": 4, "Workers' Party": 1}, "ProPAP": {"People's Action Party": 78, "Singapore Democratic Alliance": 2, "Singapore Democratic Party": 2, "Workers' Party": 1}, "ProWinner": {"People's Action Party": 78, "Singapore Democratic Alliance": 3, "Singapore Democratic Party": 2, "Workers' Party": 1}}, "2006": {"Actual": {"People's Action Party": 82, "Singapore Democratic Alliance": 1, "Workers' Party": 1}, "AntiPAP": {"People's Action Party": 66, "Singapore Democratic Alliance": 7, "Singapore Democratic Party": 2, "Workers' Party": 9}, "ProPAP": {"People's Action Party": 73, "Singapore Democratic Alliance": 4, "Singapore Democratic Party": 1, "Workers' Party": 6}, "ProWinner": {"People's Action Party": 73, "Singapore Democratic Alliance": 4, "Singapore Democratic Party": 1, "Workers' Party": 6}}, "2011": {"Actual": {"People's Action Party": 81, "Workers' Party": 6}, "AntiPAP": {"National Solidarity Party": 10, "People's Action Party": 51, "Reform Party": 4, "Singapore Democratic Alliance": 3, "Singapore Democratic Party": 4, "Singapore People's Party": 3, "Workers' Party": 12}, "ProPAP": {"National Solidarity Party": 6, "People's Action Party": 65, "Reform Party": 2, "Singapore Democratic Alliance": 2, "Singapore Democratic Party": 2, "Singapore People's Party": 2, "Workers' Party": 8}, "ProWinner": {"National Solidarity Party": 6, "People's Action Party": 64, "Reform Party": 2, "Singapore Democratic Alliance": 2, "Singapore Democratic Party": 2, "Singapore People's Party": 2, "Workers' Party": 9}}, "2015": {"Actual": {"People's Action Party": 83, "Workers' Party": 6}, "AntiPAP": {"National Solidarity Party": 4, "People's Action Party": 57, "People's Power Party": 1, "Reform Party": 3, "Singapore Democratic Alliance": 2, "Singapore Democratic Party": 4, "Singapore People's Party": 2, "Singaporeans First": 4, "Workers' Party": 12}, "ProPAP": {"National Solidarity Party": 2, "People's Action Party": 73, "Reform Party": 1, "Singapore Democratic Alliance": 1, "Singapore Democratic Party": 2, "Singapore People's Party": 1, "Singaporeans First": 2, "Workers' Party": 7}, "ProWinner": {"National Solidarity Party": 2, "People's Action Party": 72, "Reform Party": 1, "Singapore Democratic Alliance": 1, "Singapore Democratic Party": 2, "Singapore People's Party": 1, "Singaporeans First": 2, "Workers' Party": 8}}, "2020": {"Actual": {"People's Action Party": 83, "Workers' Party": 10}, "AntiPAP": {"National Solidarity Party": 4, "People's Action Party": 53, "Peoples Voice": 3, "Progress Singapore Party": 9, "Red Dot United": 2, "Reform Party": 2, "Singapore Democratic Alliance": 2, "Singapore Democratic Party": 4, "Singapore People's Party": 2, "Workers' Party": 13}, "ProPAP": {"National Solidarity Party": 2, "People's Action Party": 70, "Peoples Voice": 1, "Progress Singapore Party": 5, "Red Dot United": 1, "Reform Party": 1, "Singapore Democratic Alliance": 1, "Singapore Democratic Party": 2, "Singapore People's Party": 1, "Workers' Party": 9}, "ProWinner": {"National Solidarity Party": 2, "People's Action Party": 68, "Peoples Voice": 1, "Progress Singapore Party": 5, "Red Dot United": 1, "Reform Party": 1, "Singapore Democratic Alliance": 1, "Singapore Democratic Party": 2, "Singapore People's Party": 1, "Workers' Party": 11}}, "2025": {"Actual": {"People's Action Party": 87, "Workers' Party": 10}, "AntiPAP": {"National Solidarity Party": 2, "People's Action Party": 61, "People's Alliance for Reform": 2, "People's Power Party": 2, "Progress Singapore Party": 5, "Red Dot United": 5, "Singapore Democratic Alliance": 2, "Singapore Democratic Party": 4, "Singapore People's Party": 1, "Singapore United Party": 1, "Workers' Party": 15}, "ProPAP": {"People's Action Party": 78, "Progress Singapore Party": 3, "Red Dot United": 2, "Singapore Democratic Alliance": 1, "Singapore Democratic Party": 2, "Workers' Party": 10}, "ProWinner": {"People's Action Party": 76, "Progress Singapore Party": 3, "Red Dot United": 2, "Singapore Democratic Alliance": 1, "Singapore Democratic Party": 2, "Workers' Party": 12}}};
+
+  var PARTY = {
+    "People's Action Party":          { abbr: "PAP", color: "#2563eb" },
+    "Workers' Party":                 { abbr: "WP",  color: "#dc2626" },
+    "Singapore Democratic Party":     { abbr: "SDP", color: "#eab308" },
+    "Singapore People's Party":       { abbr: "SPP", color: "#7c3aed" },
+    "Progress Singapore Party":       { abbr: "PSP", color: "#0891b2" },
+    "National Solidarity Party":      { abbr: "NSP", color: "#16a34a" },
+    "Reform Party":                   { abbr: "RP",  color: "#f97316" },
+    "People's Power Party":           { abbr: "PPP", color: "#db2777" },
+    "Red Dot United":                 { abbr: "RDU", color: "#8b5a2b" },
+    "Singapore Democratic Alliance":  { abbr: "SDA", color: "#6b7280" },
+    "Singaporeans First":             { abbr: "SF",  color: "#8b4513" },
+    "Peoples Voice":                  { abbr: "PV",  color: "#ca8a04" },
+    "United People's Front":          { abbr: "UPF", color: "#57534e" },
+    "Singapore Justice Party":        { abbr: "SJP", color: "#ec4899" },
+    "People's Alliance for Reform":   { abbr: "PAR", color: "#ff7f50" },
+    "Singapore United Party":         { abbr: "SUP", color: "#4682b4" },
+    "Independent":                    { abbr: "IND", color: "#737373" }
+  };
+
+  var YEARS = Object.keys(DATA);
+  var SCENS = [["ProPAP", "Pro-PAP"], ["AntiPAP", "Anti-PAP"], ["ProWinner", "Pro-Winner"]];
+  var state = { year: "2025", scen: "ProPAP" };
+
+  var tip = document.getElementById("nogrc-tip");
+  var dash = document.getElementById("nogrc-dash");
+
+  function seatList(d) {
+    return Object.keys(d).map(function (p) { return [p, d[p]]; })
+      .sort(function (a, b) { return b[1] - a[1] || a[0].localeCompare(b[0]); });
+  }
+
+  function polar(cx, cy, r, ang) { return [cx + r * Math.cos(ang), cy - r * Math.sin(ang)]; }
+
+  function segPath(cx, cy, r1, r2, a0, a1) {
+    var large = (a0 - a1) > Math.PI ? 1 : 0;
+    var p1 = polar(cx, cy, r2, a0), p2 = polar(cx, cy, r2, a1);
+    var p3 = polar(cx, cy, r1, a1), p4 = polar(cx, cy, r1, a0);
+    return "M" + p1[0].toFixed(2) + " " + p1[1].toFixed(2) +
+      " A" + r2 + " " + r2 + " 0 " + large + " 1 " + p2[0].toFixed(2) + " " + p2[1].toFixed(2) +
+      " L" + p3[0].toFixed(2) + " " + p3[1].toFixed(2) +
+      " A" + r1 + " " + r1 + " 0 " + large + " 0 " + p4[0].toFixed(2) + " " + p4[1].toFixed(2) + " Z";
+  }
+
+  function showTip(evt, html) {
+    tip.innerHTML = html;
+    var rect = dash.getBoundingClientRect();
+    tip.style.left = (evt.clientX - rect.left + 12) + "px";
+    tip.style.top = (evt.clientY - rect.top - 10) + "px";
+    tip.style.opacity = 1;
+  }
+  function hideTip() { tip.style.opacity = 0; }
+
+  function draw(svgId, legId, titleId, title, dist, ref) {
+    var svg = document.getElementById(svgId);
+    var leg = document.getElementById(legId);
+    document.getElementById(titleId).textContent = title;
+    svg.innerHTML = ""; leg.innerHTML = "";
+    var cx = 200, cy = 185, r1 = 78, r2 = 160;
+    var list = seatList(dist);
+    var total = list.reduce(function (s, x) { return s + x[1]; }, 0);
+    var ang = Math.PI;
+    list.forEach(function (item) {
+      var party = item[0], seats = item[1];
+      var meta = PARTY[party] || { abbr: party, color: "#999" };
+      var a1 = ang - Math.PI * seats / total;
+      var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", segPath(cx, cy, r1, r2, ang, a1));
+      path.setAttribute("fill", meta.color);
+      path.setAttribute("class", "nogrc-seg");
+      var delta = "";
+      if (ref && ref[party] !== seats) {
+        var d = seats - (ref[party] || 0);
+        delta = " (" + (d > 0 ? "+" : "") + d + " vs actual)";
+      }
+      var tipHtml = "<b>" + party + "</b><br>" + seats + " of " + total + " seats" + delta;
+      path.addEventListener("mousemove", function (e) { showTip(e, tipHtml); });
+      path.addEventListener("mouseleave", hideTip);
+      svg.appendChild(path);
+      ang = a1;
+      var span = document.createElement("span");
+      span.innerHTML = "<span class='nogrc-dot' style='background:" + meta.color + "'></span>" + meta.abbr + " " + seats;
+      span.title = party + delta;
+      leg.appendChild(span);
+    });
+    // majority and supermajority threshold lines (measured from the left, where the largest party starts)
+    [[0.5, "½"], [2 / 3, "⅔"]].forEach(function (t) {
+      var a = Math.PI * (1 - t[0]);
+      var pA = polar(cx, cy, r1 - 4, a), pB = polar(cx, cy, r2 + 6, a);
+      var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", pA[0]); line.setAttribute("y1", pA[1]);
+      line.setAttribute("x2", pB[0]); line.setAttribute("y2", pB[1]);
+      line.setAttribute("class", "nogrc-thresh");
+      svg.appendChild(line);
+      var pT = polar(cx, cy, r2 + 16, a);
+      var txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      txt.setAttribute("x", pT[0]); txt.setAttribute("y", pT[1]);
+      txt.setAttribute("text-anchor", "middle");
+      txt.setAttribute("class", "nogrc-threshlabel");
+      txt.textContent = t[1];
+      svg.appendChild(txt);
+    });
+    var tot = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    tot.setAttribute("x", cx); tot.setAttribute("y", cy - 18);
+    tot.setAttribute("text-anchor", "middle");
+    tot.setAttribute("class", "nogrc-total");
+    tot.textContent = total;
+    svg.appendChild(tot);
+    var sub = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    sub.setAttribute("x", cx); sub.setAttribute("y", cy - 2);
+    sub.setAttribute("text-anchor", "middle");
+    sub.setAttribute("class", "nogrc-totalsub");
+    sub.textContent = "seats";
+    svg.appendChild(sub);
+  }
+
+  function scenLabel(key) {
+    for (var i = 0; i < SCENS.length; i++) { if (SCENS[i][0] === key) return SCENS[i][1]; }
+    return key;
+  }
+
+  function render() {
+    var actual = DATA[state.year]["Actual"];
+    var hypo = DATA[state.year][state.scen];
+    draw("nogrc-svg-l", "nogrc-leg-l", "nogrc-title-l", state.year + " — Actual", actual, null);
+    draw("nogrc-svg-r", "nogrc-leg-r", "nogrc-title-r", state.year + " — " + scenLabel(state.scen) + " (no GRCs)", hypo, actual);
+    document.querySelectorAll("#nogrc-years .nogrc-btn").forEach(function (b) { b.classList.toggle("active", b.dataset.v === state.year); });
+    document.querySelectorAll("#nogrc-scens .nogrc-btn").forEach(function (b) { b.classList.toggle("active", b.dataset.v === state.scen); });
+  }
+
+  function addBtns(holderId, values, key) {
+    var holder = document.getElementById(holderId);
+    values.forEach(function (v) {
+      var val = Array.isArray(v) ? v[0] : v, label = Array.isArray(v) ? v[1] : v;
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "nogrc-btn"; b.textContent = label; b.dataset.v = val;
+      b.addEventListener("click", function () { state[key] = val; render(); });
+      holder.appendChild(b);
+    });
+  }
+
+  addBtns("nogrc-years", YEARS, "year");
+  addBtns("nogrc-scens", SCENS, "scen");
+  render();
+})();
+</script>
+{% endraw %}
 
 
 Using this dashboard, I compiled the following results regarding PAP's supermajority.

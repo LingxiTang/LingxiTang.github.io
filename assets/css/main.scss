@@ -43,15 +43,17 @@ $max-content-width: {{ site.max_width }};
 
 // Add vertical space between rows of project cards
 .projects .col {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-// Publication titles: keep default text color, underline only on hover
+// Publication titles: keep the normal black/white text color (not theme green),
+// underline only on hover
 .publications .title a {
-  color: inherit;
+  color: var(--global-text-color) !important;
   text-decoration: none;
 
   &:hover {
+    color: var(--global-text-color) !important;
     text-decoration: underline;
   }
 }

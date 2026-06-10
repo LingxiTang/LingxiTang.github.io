@@ -4,7 +4,7 @@ title: No GRCs
 description: What if Singapore never had GRCs?
 img: assets/img/2020_NoGRC_ProPAP.png
 importance: 1
-category: politics
+category: for fun
 related_publications: false
 ---
 

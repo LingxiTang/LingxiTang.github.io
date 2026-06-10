@@ -3,7 +3,8 @@ layout: page
 title: projects
 permalink: /projects/
 description: Things I worked on during free time
-nav: false
+nav: true
+nav_order: 3
 display_categories: [politics]                 # Put different categories here
 horizontal: false
 ---

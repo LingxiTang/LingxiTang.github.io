@@ -20,5 +20,5 @@ Hi! I'm Lingxi (pronounced <u>ling-see</u>).
 
 I'm currently a Doctoral Researcher with the [Energy and Technology Policy Group](https://epg.ethz.ch/) at ETH Zürich, Switzerland.
 
-My current research focuses on __understanding technology__, specifically the phenomenon of [learning-by-doing](https://ourworldindata.org/learning-curve), so that we can make more __effective climate policies__. 
+My current research focuses on __technology innovation__, specifically the phenomenon of [learning-by-doing](https://energyblog.ethz.ch/learning-rates/). 
 

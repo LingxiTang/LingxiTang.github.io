@@ -10,11 +10,11 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: > 
     <p>Currently working on:<br><br>
-    Tech-smart Policymaking<br><br><br><br><br><br><br><br></p>
+    Technological Innovation (Learning rates)<br><br><br><br><br><br><br><br></p>
 
 news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+social: True # includes social icons at the bottom of the page
 ---
 Hi! I'm Lingxi (pronounced <u>ling-see</u>). 
 

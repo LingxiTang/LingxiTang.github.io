@@ -27,3 +27,16 @@ $max-content-width: {{ site.max_width }};
 .projects .card-title {
   font-size: 1.1rem;
 }
+
+// Fix 1: standardise all project-card images to the same height (crop, don't stretch)
+.projects .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+// Fix 2: tighten the body padding so the boxes are more compact
+
+.projects .card-body {
+  padding: 0.75rem 1rem 1rem;
+}

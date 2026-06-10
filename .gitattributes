@@ -1,0 +1,20 @@
+# Normalize all text files to LF in the repository.
+# This stops Windows/OneDrive CRLF line endings from showing every file as "modified".
+* text=auto eol=lf
+
+# Keep binary assets untouched.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.svg   text eol=lf
+*.pdf   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
+
+# Shell scripts must stay LF (needed for Docker/CI).
+*.sh    text eol=lf

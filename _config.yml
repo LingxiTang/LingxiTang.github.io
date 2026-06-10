@@ -6,16 +6,16 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Lingxi
 middle_name: 
 last_name: Tang
-email: tanglingxi97@outlook.sg
+email: lingxi.tang@gess.ethz.ch
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Lingxi Tang. PhD ETH Zürich. Technology-centric Climate Policy. Sustainability.
+  Lingxi Tang. PhD ETH Zürich. Technology and Innovation Policy. Sustainability.
 footer_text:
 
 keywords: lingxi, tang, sustainability, phd, ethz, eth, energy policy, energy, technology, technology policy, oxford, climate policy # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: WebsiteIcon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: https://LingxiTang.github.io # the base hostname & protocol for your site
+url: https://lingxiTang.github.io # the base hostname & protocol for your site
 baseurl: #the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
@@ -101,7 +101,7 @@ whatsapp_number: # your WhatsApp number (full phone number in international form
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
 work_url: # work page URL
-x_username: lingxitang
+x_username: # your X (formerly Twitter) username
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 

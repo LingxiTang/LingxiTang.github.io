@@ -8,6 +8,8 @@ category: for fun
 related_publications: false
 ---
 
+*June 2026 Update: Added 2025 GE results.*
+
 Data and code used for this article are [here](https://github.com/LingxiTang/NoGRCExperiment).
 
 This post summarises the main findings from a experiment I conducted and there will also be a rant on the GRC system at the end. 
@@ -47,7 +49,7 @@ To answer this question, I looked at the GE results from 1988 to 2010, and appli
 
 - Results of SMCs remain the same.
 
-- PAP gets the rounded up number of seats based on the vote proportion. e.g. If PAP wins 51-75% of votes in a 4-member GRC, they win 3 seats. (This is the Pro-PAP scenario. More scenarios later.)
+- PAP gets the rounded up number of seats based on the vote proportion. e.g. If PAP wins 51-75% of votes in a 4-member GRC, they win 3 seats. (This is the 'Pro-PAP' scenario. More scenarios will be explored later.)
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 
@@ -69,9 +71,9 @@ As expected, if GRCs had been proportionally represented, we see the winning par
 
 Interestingly, in 2020, even WP benefitted from the GRC system because they, well, won GRC seats, in Aljunied and Sengkang.
 
-I know what you're thinking. *Bruh, where's the label for 2011*
+I know what you're thinking. *Bruh, where's the label for 2011* (*June 2026 Update: Previously, the x-axis label for 2011 was missing due to a code bug. I've fixed it now*)
 
-Turns out it’s a bug caused by the fact that WP didn’t contest any GRCs in 2001. This then led me to realise that WP was not the main opposition party until relatively recently. In fact, between 1988 and 2001, WP only won 1 seat, on par with the Chiam See Tong/Chee Soon Juan parties of SDP, SPP and SDA.
+Turns out it’s a bug caused by the fact that WP didn’t contest any GRCs in 2001.  This then led me to realise that WP was not the main opposition party until relatively recently. In fact, between 1988 and 2001, WP only won 1 seat, on par with the Chiam See Tong/Chee Soon Juan parties of SDP, SPP and SDA.
 
 *What happened in 2011? Why the big spike in seat changes?*
 
@@ -79,7 +81,7 @@ To answer this, I thought it might be because GRC seat numbers jumped in 2011 an
 
 Anddd I was wrong: % of seats in GRCs were pretty stable since 1997. So, this couldn’t have been the reason behind the 2011 spike in seat changes.
 
-I looked bit deeper and alas, 2011 was the first year since 1988 that all seats were contested. As in, between 1988 and 2006, PAP won a bunch of uncontested seats (See Right below). 
+I looked bit deeper and alas, 2011 was the first year since 1988 that all seats were contested. As in, between 1988 and 2006, PAP won a bunch of uncontested seats (See Fig on the right below). 
 
 Under my scenario assumptions, these seats would not change since there were no opposition votes. Thus, it makes sense that 2011 would see a spike in the seat change.
 
@@ -137,14 +139,14 @@ Alright again, let's look at how many seats each party would have gained/lost in
 
 Comparing 'Pro-Winner' and 'Pro-PAP':
 
-The differences are minimal. The simple reason is that the PAP had been winning and so, they’re practically the same scenario. The main differences between these 2 scenarios happen when opposition actually won GRC seats (i.e. WP in 2011 - 2020).
+The differences are minimal. The simple reason is that the PAP had been winning and so, they’re practically the same scenario. The main differences between these 2 scenarios happen when opposition actually won GRC seats (i.e. WP in 2011 - 2025).
 
 Comparing 'Anti-PAP' and 'Pro-PAP':
 
 Now this is where it gets interesting. Basically, what happens is that seat changes doubled in 'Anti-PAP' compared to 'Pro-PAP'. For e.g., if the seat change for PAP was -10 in 'Pro-PAP', it would be roughly -20 in 'Anti-PAP'. 
 These two scenarios could be interpreted as the “best case” and “worst case” for the PAP.
 
-In the worst case, oof, 30 SEATS LOST from the PAP, had there been no GRC. Hm, would they still have had a supermajority?
+In the worst case, oof, 30 SEATS LOST from the PAP, had there been no GRC. Hm, but would they still have had a supermajority, in the 'Anti-PAP' scenario?
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 *Supermajority?*
@@ -155,7 +157,7 @@ the [2016 minority president amendment](https://web.archive.org/web/201906061650
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 
-At this stage, I invite you to play with the interactive dashboard below, where you can compare actual and hypothetical GE results. Pick a year and a scenario; hover (or tap) a segment for details. The dashed lines mark the &frac12; majority and &frac23; supermajority thresholds. (Prefer the notebook version? It's still on [Binder](https://mybinder.org/v2/gh/LingxiTang/NoGRCExperiment/HEAD?labpath=Results_Visualisation_interactive.ipynb).)
+At this stage, I invite you to play with the interactive dashboard below, where you can compare actual and hypothetical GE results. The dashed lines mark the simple majority and supermajority thresholds.
 
 {% raw %}
 <style>
@@ -362,7 +364,7 @@ Using this dashboard, I compiled the following results regarding PAP's supermajo
 
 Pro-PAP: 
 
-- 1988-2020: PAP holds a supermajority.
+- 1988-2025: PAP holds a supermajority.
 
 Anti-PAP:
 
@@ -370,6 +372,7 @@ Anti-PAP:
 - 2011:         PAP misses supermajority by 7 seats, but wins 7 seats above majority.
 - 2015:         PAP misses a supermajority by 3 seats, but wins 12 seats above majority.
 - 2020:         PAP misses supermajority by 9 seats, but wins 6 seats above majority.
+- 2025:         PAP misses supermajority by 6 seats, but wins 11 seats above majority.
 
 So, even without GRCs, PAP would still have a supermajority in the best case, and still have a safe majority in the worst case.
 
@@ -416,7 +419,7 @@ ________________________________________________________________________________
 
 __CONCLUSION__
 
-For the record, I am not even anti-PAP. Personally, I highly value our unique “democratic one-party system”. Singapore is super lucky to have proper unrigged elections, while enjoying the efficiency of a one-party state.
+For the record, I am supportive of the PAP. I highly value our unique “democratic one-party system”. Singapore is super lucky to have proper unrigged elections, while enjoying the efficiency of a one-party state.
 
 Even so, I still think that the GRC system needs to go. It's unnecessarily unfair, and it's not even helping in promoting minority representation in parliament. 
 
@@ -426,7 +429,7 @@ Removing or reforming the GRC system is a step Singapore can take towards a fair
 
 And finally,
 
-This is really not priority. I wrote this because I was bored and one thing led to another.
+This is really not priority. I wrote this because I was bored.
 
-Climate change is the priority. My vote will go to the party with the better Net Zero Strategy for Singapore. 
+Climate change and sustainable development are my priorities. My vote will go to the party with the better Net Zero Strategy for Singapore. 
 

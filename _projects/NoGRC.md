@@ -203,7 +203,7 @@ At this stage, I invite you to play with the interactive dashboard below, where 
       <div class="nogrc-legend" id="nogrc-leg-r"></div>
     </div>
   </div>
-  <p class="nogrc-note">Elected seats only (no NCMPs). Hypothetical totals can differ from the real parliament size because seats are rounded per GRC.</p>
+  <p class="nogrc-note">Elected seats only (no NCMPs).</p>
   <div class="nogrc-tip" id="nogrc-tip"></div>
 </div>
 

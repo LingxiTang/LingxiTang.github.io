@@ -43,7 +43,7 @@ ________________________________________________________________________________
 
 __RESEARCH DESIGN__
 
-To answer this question, I looked at the GE results from 1988 to 2010, and applied hypothetical changes based on the following assumptions:
+To answer this question, I looked at the GE results from 1988 to 2025, and applied hypothetical changes based on the following assumptions:
 
 - Seats in GRCs split proportionally based on votes. E.g. If a 4-member GRC had a vote split of 75:25, the seats would be split 3:1.
 

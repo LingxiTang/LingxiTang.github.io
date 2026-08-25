@@ -5,7 +5,7 @@ permalink: /projects/
 description: 
 nav: true
 nav_order: 3
-display_categories: [EnergyBlog, for fun]                 # Put different categories here
+display_categories: [EnergyBlog, sustainable finance, for fun]                 # Put different categories here
 horizontal: false
 ---
 

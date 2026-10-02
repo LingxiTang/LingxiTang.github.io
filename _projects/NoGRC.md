@@ -152,7 +152,7 @@ ________________________________________________________________________________
 *Supermajority?*
 
 A party holds a supermajority of the parliament if they have more than 2/3 of seats. This gives them the power to make changes to the CONSTITUTION, which PAP has done so. Most notably, 
-the [2016 minority president amendment](https://web.archive.org/web/20190606165027/https://www.channelnewsasia.com/news/singapore/elected-presidency-amendments-to-constitution-passed-in-parliame-7719282) 
+the 2016 minority president amendment
 & [2022 marriage definition amendment](https://www.channelnewsasia.com/singapore/s377a-repeal-constitution-amendment-marriage-definition-creative-arguments-3108831).
 
 ____________________________________________________________________________________________________________________________________________________________________________________

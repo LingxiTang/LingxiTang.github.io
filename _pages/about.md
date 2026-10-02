@@ -6,7 +6,7 @@ subtitle: PhD ETH Zürich | MEng Oxford
 
 profile:
   align: left
-  image: headshot.jpg
+  image: LingxiTang.jpg
   image_circular: false # crops the image to make it circular
   more_info: > 
     <p>Currently working on:<br><br>

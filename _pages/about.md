@@ -9,7 +9,7 @@ profile:
   image: LingxiTang.jpg
   image_circular: false # crops the image to make it circular
   more_info: > 
-    <p>Currently working on:<br><br>
+    <p>Currently researching:<br><br>
     Technological Innovation (Learning rates)<br><br><br><br><br><br><br><br></p>
 
 news: false # includes a list of news items
